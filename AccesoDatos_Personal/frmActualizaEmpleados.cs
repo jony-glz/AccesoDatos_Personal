@@ -57,26 +57,26 @@ namespace AccesoDatos_Personal
             string idjob = tbIDJob.Text;
             string lvljob = tbLVJob.Text;
             string idpub = tbIDPub.Text;
-            string date = dtpHireDate.Value.ToString().Substring(0, 10);
+            string date = dtpHireDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
 
             Datos datos = new Datos();
             Boolean f = datos.cmd("UPDATE employee SET " +
-                "fname='"+fname+"', " +
-                "lname='"+lname+"', " +
-                "minit='"+minit+"', " +
-                "job_id='"+idjob+"', " +
-                "job_lvl="+lvljob+"', " +
-                "pub_id='"+idpub+"', " +
-                "hire_date='"+date+" 00:00:00.000' " +
-                "where emp_id='"+id+"';"
+                 "fname='" + fname + "', " +
+                "lname='" + lname + "', " +
+                "minit='" + minit + "', " +
+                "job_id='" + idjob + "', " +
+                "job_lvl='" + lvljob + "', " +
+                "pub_id='" + idpub + "', " +
+                "hire_date='" + date + "' " +
+                "WHERE emp_id='" + id + "';"
             );
 
             if (f)
             {
-                MessageBox.Show("Registro actualizado", "Sistema", MessageBoxButtons.OKCancel);
+                MessageBox.Show("Registro actualizado", "Sistema", MessageBoxButtons.OKCancel,MessageBoxIcon.Information);
             } else
             {
-                MessageBox.Show("Error al actualizar", "Sistema", MessageBoxButtons.OKCancel);
+                MessageBox.Show("Error al actualizar", "Sistema", MessageBoxButtons.OKCancel,MessageBoxIcon.Error);
             }
         }
     }

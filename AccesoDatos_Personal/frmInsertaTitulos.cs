@@ -21,19 +21,19 @@ namespace AccesoDatos_Personal
         {
             string id = tbId.Text, Name = tbName.Text, type = tbType.Text, pub_id = tbPubId.Text,
                 price = tbPrice.Text, advance = tbAdvance.Text, royalty = tbRoyalty.Text,
-                ytd_sales = tbYTDSales.Text, notes = rtbNotes.Text, date = dtpDate.Value.ToString().Substring(0, 10);
+                ytd_sales = tbYTDSales.Text, notes = rtbNotes.Text, date = dtpDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
 
             Datos datos = new Datos();
             Boolean f = datos.cmd("" +
                 "INSERT INTO titles(title_id,title,type,pub_id,price,advance,royalty,ytd_sales,notes,pubdate) VALUES" +
                 "('" + id + "','" + Name + "','" + type + "','" + pub_id + "','" + price + "','" + advance + "','" + royalty + "'," +
-                "'" + ytd_sales + "','"+notes+"','"+date+" 00:00:00.000';");
+                "'" + ytd_sales + "','"+notes+"','"+date+"')");
             if (f == true)
             {
-                MessageBox.Show("Se han insertado los datos", "Sistema", MessageBoxButtons.OK);
+                MessageBox.Show("Se han insertado los datos", "Sistema", MessageBoxButtons.OK,MessageBoxIcon.Information);
             } else
             {
-                MessageBox.Show("Error al insertar los datos", "Sistema", MessageBoxButtons.OK);
+                MessageBox.Show("Error al insertar los datos", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -24,7 +24,7 @@ namespace AccesoDatos_Personal
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al abri la conexion: "+ex.Message);
+                MessageBox.Show(ex.Message);
                 return null;
             }
         }
@@ -68,7 +68,7 @@ namespace AccesoDatos_Personal
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString);
+                MessageBox.Show(ex.Message);
                 return false;
                 throw;
             }

@@ -50,27 +50,28 @@ namespace AccesoDatos_Personal
         {
             string id = tbId.Text, name = tbName.Text, type = tbType.Text, pub_id = tbPubId.Text,
                 price = tbPrice.Text, advance = tbAdvance.Text, ytd_sales = tbYTDSales.Text, notes = rtbNotes.Text
-                , pubate = dtpDate.Value.ToString().Substring(0, 10), royalty = tbRoyalty.Text;
+                , pubate = dtpDate.Value.ToString("yyyy-MM-dd HH:mm:ss"), royalty = tbRoyalty.Text;
 
             Datos datos = new Datos();
-            bool f = datos.cmd("UPDATE titles SET" +
-                "title='"+name+"', " +
-                "type+'"+type+"', " +
-                "pub_id='"+pub_id+"', " +
-                "price='"+price+"', " +
-                "advance='"+advance+"', " +
-                "royalty='"+royalty+"', " +
-                "ytd_sales='"+ytd_sales+"', " +
-                "notes='"+notes+"', " +
-                "pubdate='"+pubate+" 00:00:00.000' " +
-                "where title_id='"+id+"';"
+            bool f = datos.cmd("UPDATE titles SET " +
+               "title='" + name + "', " +
+               "type='" + type + "', " +
+               "pub_id='" + pub_id + "', " +
+               "price=" + price + ", " +
+               "advance=" + advance + ", " +
+               "royalty=" + royalty + ", " +
+               "ytd_sales=" + ytd_sales + ", " +
+               "notes='" + notes + "', " +
+               "pubdate='" + pubate + "' " +
+               "WHERE title_id='" + id + "'"
             );
+
             if ( f==true )
             {
-                MessageBox.Show("Se han actualizado los datos", "Sistema", MessageBoxButtons.OK);
+                MessageBox.Show("Se han actualizado los datos", "Sistema", MessageBoxButtons.OK,MessageBoxIcon.Information);
             } else
             {
-                MessageBox.Show("Error al actualizar los datos", "Sistema", MessageBoxButtons.OK);
+                MessageBox.Show("Error al actualizar los datos", "Sistema", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }

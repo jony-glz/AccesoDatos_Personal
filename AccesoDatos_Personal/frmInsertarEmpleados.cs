@@ -26,19 +26,18 @@ namespace AccesoDatos_Personal
             string jobid = tbIDJob.Text;
             string lvjob = tbLVJob.Text;
             string idpub = tbIDPub.Text;
-            string hiredate = dtpHireDate.Value.ToString();
-            string date = hiredate.Substring(0, 10);
+            string hiredate = dtpHireDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
 
             Datos datos = new Datos();
             bool f = datos.cmd("insert into employee(emp_id,fname,lname,minit,job_id,job_lvl,pub_id,hire_date)"
-                +"values ('" + id + "','"+fname+"','"+lname+"','"+minit+"','"+jobid+"','"+lvjob+"','"+idpub+"','"+date+" 00:00:00.000');");
+                +"values ('" + id + "','"+fname+"','"+lname+"','"+minit+"','"+jobid+"','"+lvjob+"','"+idpub+"','"+hiredate+"');");
 
             if (f)
             {
-                MessageBox.Show("Datos insertados", "Sistema", MessageBoxButtons.OK);
+                MessageBox.Show("Datos insertados", "Sistema", MessageBoxButtons.OK,MessageBoxIcon.Information);
             } else
             {
-                MessageBox.Show("Error al insertar", "Sistema", MessageBoxButtons.OK);
+                MessageBox.Show("Error al insertar", "Sistema", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }

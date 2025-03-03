@@ -56,7 +56,8 @@ namespace AccesoDatos_Personal
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-
+            frmInsertaTitulos insertaTitulos = new frmInsertaTitulos();
+            insertaTitulos.ShowDialog();
         }
     }
 }
