@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
+
+namespace AccesoDatos_Personal
+{
+    internal class Datos
+    {
+        String cadenaConexion = "Data Source=DESKTOP-UI1FL85\\SQLEXPRESS;" +
+            "integrated security=true;initial catalog=pubs; encrypt=false";
+        SqlConnection conexion;
+
+        private SqlConnection AbrirConexion()
+        {
+            try
+            {
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open(); //Abrir conexion a base de datos
+                return conexion;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al abri la conexion: "+ex.Message);
+                return null;
+            }
+        }
+
+        public bool prueba()
+        {
+            try
+            {
+                AbrirConexion();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+                throw;
+            }
+        }
+
+        public DataSet consulta(String consulta)
+        {
+            try
+            {
+                DataSet dS = new DataSet();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(consulta,AbrirConexion());
+                sqlDataAdapter.Fill(dS);
+                return dS;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.ToString);
+                return null;
+            }
+        }
+
+        public bool cmd(string consulta) {
+            try
+            {
+                SqlCommand cmd = new SqlCommand(consulta, AbrirConexion());
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString);
+                return false;
+                throw;
+            }
+        }
+    }
+}
