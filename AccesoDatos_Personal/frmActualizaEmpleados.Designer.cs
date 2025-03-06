@@ -172,6 +172,7 @@
             // 
             // tbId
             // 
+            tbId.Enabled = false;
             tbId.Location = new Point(91, 14);
             tbId.Name = "tbId";
             tbId.Size = new Size(300, 55);
@@ -188,7 +189,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(701, 589);
+            btnEliminar.Location = new Point(1153, 589);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(225, 69);
             btnEliminar.TabIndex = 72;
@@ -200,7 +201,7 @@
             // 
             AutoScaleDimensions = new SizeF(20F, 48F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1472, 760);
+            ClientSize = new Size(1472, 703);
             Controls.Add(btnEliminar);
             Controls.Add(dtpHireDate);
             Controls.Add(btnActualizar);

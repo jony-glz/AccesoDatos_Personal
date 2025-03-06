@@ -69,16 +69,16 @@
             // 
             // rtbNotes
             // 
-            rtbNotes.Location = new Point(1131, 371);
+            rtbNotes.Location = new Point(1183, 270);
             rtbNotes.Name = "rtbNotes";
-            rtbNotes.Size = new Size(626, 288);
+            rtbNotes.Size = new Size(604, 288);
             rtbNotes.TabIndex = 116;
             rtbNotes.Text = "";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(1131, 304);
+            label8.Location = new Point(1183, 199);
             label8.Name = "label8";
             label8.Size = new Size(114, 48);
             label8.TabIndex = 115;
@@ -93,7 +93,7 @@
             // 
             // btnInsertar
             // 
-            btnInsertar.Location = new Point(414, 685);
+            btnInsertar.Location = new Point(688, 610);
             btnInsertar.Name = "btnInsertar";
             btnInsertar.Size = new Size(225, 69);
             btnInsertar.TabIndex = 112;
@@ -160,7 +160,7 @@
             // 
             // tbPubId
             // 
-            tbPubId.Location = new Point(1583, 192);
+            tbPubId.Location = new Point(829, 196);
             tbPubId.Name = "tbPubId";
             tbPubId.Size = new Size(202, 55);
             tbPubId.TabIndex = 104;
@@ -168,7 +168,7 @@
             // Phone
             // 
             Phone.AutoSize = true;
-            Phone.Location = new Point(1583, 129);
+            Phone.Location = new Point(673, 199);
             Phone.Name = "Phone";
             Phone.Size = new Size(150, 48);
             Phone.TabIndex = 103;
@@ -176,7 +176,7 @@
             // 
             // tbType
             // 
-            tbType.Location = new Point(1125, 192);
+            tbType.Location = new Point(133, 192);
             tbType.Name = "tbType";
             tbType.Size = new Size(413, 55);
             tbType.TabIndex = 102;
@@ -184,7 +184,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(1125, 141);
+            label3.Location = new Point(12, 199);
             label3.Name = "label3";
             label3.Size = new Size(94, 48);
             label3.TabIndex = 101;
@@ -192,7 +192,7 @@
             // 
             // tbName
             // 
-            tbName.Location = new Point(12, 196);
+            tbName.Location = new Point(133, 103);
             tbName.Name = "tbName";
             tbName.Size = new Size(976, 55);
             tbName.TabIndex = 100;
@@ -200,7 +200,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 145);
+            label2.Location = new Point(12, 103);
             label2.Name = "label2";
             label2.Size = new Size(115, 48);
             label2.TabIndex = 99;
@@ -208,7 +208,7 @@
             // 
             // tbId
             // 
-            tbId.Location = new Point(78, 15);
+            tbId.Location = new Point(133, 11);
             tbId.Name = "tbId";
             tbId.Size = new Size(300, 55);
             tbId.TabIndex = 98;
@@ -226,7 +226,7 @@
             // 
             AutoScaleDimensions = new SizeF(20F, 48F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2138, 781);
+            ClientSize = new Size(1807, 706);
             Controls.Add(label9);
             Controls.Add(dtpDate);
             Controls.Add(rtbNotes);
@@ -249,7 +249,7 @@
             Controls.Add(tbId);
             Controls.Add(label1);
             Name = "frmInsertaTitulos";
-            Text = "frmInsertaTitulos";
+            Text = "Insertar Títulos";
             ResumeLayout(false);
             PerformLayout();
         }

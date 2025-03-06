@@ -60,6 +60,7 @@
             // 
             // tbId
             // 
+            tbId.Enabled = false;
             tbId.Location = new Point(121, 39);
             tbId.Name = "tbId";
             tbId.Size = new Size(300, 55);
